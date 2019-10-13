@@ -52,7 +52,7 @@ No                    </b></td></tr>
 
 <tr> <td align="left"><b>
 Your program can be graded <i> through </i> your webserver directory listing  </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 <tr> <td align="left"><b>
 Downloaded your D2L submission to verify not corrupt</b></td><td align="left"><b>
@@ -65,26 +65,26 @@ No                    </b></td></tr>
 
 <tr> <td align="left"><b>
 All files correctly named, in single directory </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 <tr> <td align="left"><b>
 MyWebServer compiles as one file. </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 
 <tr> <td align="left"><b>
 "javac *.java" in one directory compiles all code. </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 <tr> <td align="left"><b>
 MyWebServer tested with required <i> FireFox browser </i> </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 
 
 <tr> <td align="left"><b>
 Written the correct headers for source files?    </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 
 <tr> <td align="center"><b>
@@ -93,64 +93,64 @@ No                    </b></td></tr>
 
 <tr> <td align="left"><b>
 Implemented basic security by restricting access to directory tree (recommended)  </b></td><td align="left"><b>
-No                    </b></td></tr>
+Maybe                    </b></td></tr>
 
 <tr> <td align="left"><b>
 MyWebServer serves files from
 DIRECTORY IN WHICH SERVER IS STARTED </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 <tr> <td align="left"><b>
 MyWebServer&mdash;correctly named&mdash;runs at port 2540  </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 <tr> <td align="left"><b>
 Extensive Comments in Source for MyWebServer.java    </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 <tr> <td align="left"><b>
 Captured http stream from browser with MyListener or other method </b></td><td align="left"><b>
-No          </b></td></tr>
+Yes          </b></td></tr>
 
 <tr> <td align="left"><b>
 Captured http stream from some webserver with MyTelnetClient or other method</b></td><td align="left"><b>
-No          </b></td></tr>
+Yes          </b></td></tr>
 
 <tr> <td align="left"><b>
 Collected HTTP streams from MyListener and MyTelnetClient into http-streams.txt </b></td><td align="left"><b>
-No          </b></td></tr>
+Yes          </b></td></tr>
 
 
 <tr> <td align="left"><b>
 Return txt files with MIME from MyWebServer </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 <tr> <td align="left"><b>
 Return html files with MIME from MyWebServer </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 
 <tr> <td align="left"><b>
 Return HTML directory   </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 <tr> <td align="left"><b>
 Return HTML directory with hotlinks   </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 <tr> <td align="left"><b>
 Fully, recursively, navigates directories and files   </b></td><td align="left"><b>
-No                    </b></td></tr>
+Maybe                    </b></td></tr>
 
 
 <tr> <td align="left"><b>
 Returns form input from fake-cgi   </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 <tr> <td align="left"><b>
 I understand that this is a real webserver and might expose my files to the
 rest of the world if I am not careful. </b></td><td align="left"><b>
-No                    </b></td></tr>
+Yes                    </b></td></tr>
 
 <tr> <td align="center"><b>
 ------------------- BRAGGING RIGHTS BELOW ---------------------    </b></td><td align="left"><b>
@@ -158,7 +158,7 @@ THIS LINE                    </b></td></tr>
 
 <tr> <td align="left"><b>
 Restricts directory browsing to server subtree for security  </b></td><td align="left"><b>
-No                    </b></td></tr>
+Maybe                    </b></td></tr>
 
 <tr> <td align="left"><b>
 (Hard) Effects the true running of arbitrary cgi scripts in some language  </b></td><td align="left"><b>
@@ -178,9 +178,24 @@ Yes                    </b></td></tr>
 
 <h3> Your special comments to me, only if needed: </h3>
 
-Comment one <p>
+Comment: <p></p>
+The Server console itself outputs the directory or file it is accessing.
+/ is the "root"-directory. That is the directory the WebServer is running.
+<p></p>
 
-Comment two, etc. <p>
+Also I tested my code with Safari and it didn't work. However, FireFox worked wonderfully.
+
+Maybe 1 (and also 3rd): <p></p>
+
+Not exactly sure if there is some way to hack my server and get to the directory above that in which the server
+is in but from the buttons and links you cannot reach a higher directory than that in which the server is started in.
+<p></p>
+Maybe 2: <p></p>
+My server can navigate the directories and files fully. However, it does not do this recursively.
+I wasn't sure how to do this recursively since it is only opening links. Displaying the files and
+directories is done with a loop. Recursion seems unecessary.
+
+
 
 </body></html>
 
