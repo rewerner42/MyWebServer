@@ -162,8 +162,8 @@ class BrowseWorker extends Thread{
      * @param l is the amount of bytes that will be sent to  the Browser
      */
     private static void sendHeader(PrintStream out, String type, long l){
-        out.print("HTTP/1.1 200 OK"+"Server: Fox Server"
-        +"Content-Length:"+l+"Connection: close"+"Content-Type: text/"+type+"\r\n\r\n");
+        out.print("HTTP/1.1 200 OK\n"+"Server: Fox Server\n"
+        +"Content-Length:"+l+"\nConnection: close\n"+"Content-Type: text/"+type+"\r\n\r\n");
     }
 
     /**
@@ -276,12 +276,40 @@ class BrowseWorker extends Thread{
 
         File current = new File("."+request);
         if(current.isFile()){ // if it is a file send the file
-            String type = request.substring(request.indexOf("."));
+            String type = request.substring(request.indexOf(".")+1);
+            System.out.println(type);
+            System.out.println(type.length());
             //now calculate data length
             long filesize = current.length();
-            if(type!="html"){
+            
+
+
+            /** IMPORTANT:
+             * Beyond this point is the area that had an error.
+             * For testing purposes I had hard-coded "html"
+             * in the function sendHeader and then changed it.
+             * This means that where the function "sendHeader(out,type,filesize)"
+             * is I had "sendHeader(out,"html",filesize)".
+             * In the file I handed in the if-statement read:
+             * 
+             * if(type !="html"){
+             *      type = "plain";
+             * }
+             * 
+             *  now to ensure that it always works I added an else statement
+             *  and now check for the html tag differently to make sure the tag
+             *  always is "html" when this is the file-type.
+             */
+
+
+            //begin changed portion
+            if(!type.contains("html")){
                 type = "plain";
             }
+            else{
+                type ="html";
+            }
+            //end changed portion
             sendHeader(out,type,filesize);
             sendFileContent(request, out);
         }

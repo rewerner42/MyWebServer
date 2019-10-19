@@ -21,71 +21,6 @@ Accept-Encoding: gzip, deflate
 Connection: keep-alive
 Upgrade-Insecure-Requests: 1
 
-GET /cat.txt HTTP/1.1
-Host: localhost:2540
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:69.0) Gecko/20100101 Firefox/69.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Upgrade-Insecure-Requests: 1
-
-GET /cat.html HTTP/1.1
-Host: localhost:2540
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:69.0) Gecko/20100101 Firefox/69.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Upgrade-Insecure-Requests: 1
-
-GET /woernderderboerner.html HTTP/1.1
-Host: localhost:2540
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:69.0) Gecko/20100101 Firefox/69.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Upgrade-Insecure-Requests: 1
-
-GET /woernderderboerner/whois_werner/files.txt HTTP/1.1
-Host: localhost:2540
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:69.0) Gecko/20100101 Firefox/69.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Upgrade-Insecure-Requests: 1
-
-GET /woernderderboerner/whois_werner/files.pdf HTTP/1.1
-Host: localhost:2540
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:69.0) Gecko/20100101 Firefox/69.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Upgrade-Insecure-Requests: 1
-
-GET /Katzen_sind_witzige_Tiefe/sic_mundus_est/files.pdf HTTP/1.1
-Host: localhost:2540
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:69.0) Gecko/20100101 Firefox/69.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Upgrade-Insecure-Requests: 1
-
-GET /Katzen_sind_witzige_Tiefe/wer_zum_Teufel_wei%C3%9F_wo_Friedel_ist/files.pdf HTTP/1.1
-Host: localhost:2540
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:69.0) Gecko/20100101 Firefox/69.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Upgrade-Insecure-Requests: 1
-
-
-
 
 // The most frustrating thing about all of this is that everything I tried returned a bad request.
 // and sometimes there was even a socket reset. I tried searching the web for reasons this would happen
@@ -230,27 +165,6 @@ java.net.SocketException: Connection reset
 	at MyTelnetClient.main(MyTelnetClient.java:39)
 
 
-//typing without capitalization gives no error
-
-Using server: condor.depaul.edu, Port: 80
-Enter text to send to the server, <stop> to end: get /
-Enter text to send to the server, <stop> to end: stop
-HTTP/1.1 400 Bad Request
-Date: Sat, 12 Oct 2019 15:20:06 GMT
-Server: Apache
-Content-Length: 226
-Connection: close
-Content-Type: text/html; charset=iso-8859-1
-
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>400 Bad Request</title>
-</head><body>
-<h1>Bad Request</h1>
-<p>Your browser sent a request that this server could not understand.<br />
-</p>
-</body></html>
-
 // I even tried it exactly the way the Browser sends the GET request:
 // It even gives a socket error
 
@@ -293,165 +207,6 @@ java.net.SocketException: Connection reset
 	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:326)
 	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:392)
 	at MyTelnetClient.main(MyTelnetClient.java:39)
-
-
-
-
-//doing it with only one enter
-
-Using server: condor.depaul.edu, Port: 80
-Enter text to send to the server, <stop> to end: GET /elliott/cat.html HTTP/1.1
-Enter text to send to the server, <stop> to end: Host: condor.depaul.edu:80
-Enter text to send to the server, <stop> to end: 
-Enter text to send to the server, <stop> to end: stop
-HTTP/1.1 400 Bad Request
-Date: Sat, 12 Oct 2019 15:26:37 GMT
-Server: Apache
-Content-Length: 226
-Connection: close
-Content-Type: text/html; charset=iso-8859-1
-
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>400 Bad Request</title>
-</head><body>
-<h1>Bad Request</h1>
-<p>Your browser sent a request that this server could not understand.<br />
-</p>
-</body></html>
-java.net.SocketException: Connection reset
-	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:186)
-	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
-	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
-	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
-	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
-	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:185)
-	at java.base/java.io.BufferedReader.fill(BufferedReader.java:161)
-	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:326)
-	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:392)
-	at MyTelnetClient.main(MyTelnetClient.java:39)
-
-
-
-
-
-    Using server: condor.depaul.edu, Port: 80
-Enter text to send to the server, <stop> to end: GET /elliott/cat.html HTTP/1.1
-Enter text to send to the server, <stop> to end: Host: condor.depaul.edu:80
-Enter text to send to the server, <stop> to end: 
-Enter text to send to the server, <stop> to end: 
-Enter text to send to the server, <stop> to end: stop
-HTTP/1.1 400 Bad Request
-Date: Sat, 12 Oct 2019 15:27:08 GMT
-Server: Apache
-Content-Length: 226
-Connection: close
-Content-Type: text/html; charset=iso-8859-1
-
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>400 Bad Request</title>
-</head><body>
-<h1>Bad Request</h1>
-<p>Your browser sent a request that this server could not understand.<br />
-</p>
-</body></html>
-java.net.SocketException: Connection reset
-	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:186)
-	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
-	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
-	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
-	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
-	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:185)
-	at java.base/java.io.BufferedReader.fill(BufferedReader.java:161)
-	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:326)
-	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:392)
-	at MyTelnetClient.main(MyTelnetClient.java:39)
-
-
-    // modified some code and tried doing it with my localhost computer:
-    // yet still the same error. That means it cant be https or something.
-    // must be something with the software but sending the information 
-    // to my listener makes the HTTP GET request exactly the same.
-    // slightly out of options now.
-
-    Using server: localhost, Port: 80
-Enter text to send to the server, <stop> to end: GET /index.html.en HTTP/1.1
-Enter text to send to the server, <stop> to end: 
-Enter text to send to the server, <stop> to end: 
-Enter text to send to the server, <stop> to end: stop
-HTTP/1.1 400 Bad Request
-Date: Sat, 12 Oct 2019 14:17:26 GMT
-Server: Apache/2.4.41 (Unix)
-Content-Length: 226
-Connection: close
-Content-Type: text/html; charset=iso-8859-1
-
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>400 Bad Request</title>
-</head><body>
-<h1>Bad Request</h1>
-<p>Your browser sent a request that this server could not understand.<br />
-</p>
-</body></html>
-
-
-
-Using server: localhost, Port: 80
-Enter text to send to the server, <stop> to end: GET /index.html.en HTTP/1.1
-Enter text to send to the server, <stop> to end: Host: localhost:80
-Enter text to send to the server, <stop> to end: 
-Enter text to send to the server, <stop> to end: 
-Enter text to send to the server, <stop> to end: stop
-HTTP/1.1 400 Bad Request
-Date: Sat, 12 Oct 2019 14:13:14 GMT
-Server: Apache/2.4.41 (Unix)
-Content-Length: 226
-Connection: close
-Content-Type: text/html; charset=iso-8859-1
-
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>400 Bad Request</title>
-</head><body>
-<h1>Bad Request</h1>
-<p>Your browser sent a request that this server could not understand.<br />
-</p>
-</body></html>
-java.net.SocketException: Connection reset
-	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:186)
-	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
-	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
-	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
-	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
-	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:185)
-	at java.base/java.io.BufferedReader.fill(BufferedReader.java:161)
-	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:326)
-	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:392)
-	at MyTelnetClient.main(MyTelnetClient.java:43)
-
-
-
-// more changes that merely broke everything
-
-Using server: localhost, Port: 80
-Enter text to send to the server, <stop> to end: GET /index.html.en HTTP/1.1
-Enter text to send to the server, <stop> to end: Host localhost:80
-Enter text to send to the server, <stop> to end: 
-Enter text to send to the server, <stop> to end: 
-Enter text to send to the server, <stop> to end: stop
-java.net.SocketException: Connection reset
-	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:186)
-	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
-	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
-	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
-	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
-	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:185)
-	at java.base/java.io.BufferedReader.fill(BufferedReader.java:161)
-	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:326)
-	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:392)
-
 
 
     // After all of this I switched over to using the mac built-in telnet code:
@@ -520,27 +275,6 @@ Location: https://condor.depaul.edu:80/
 Content-Length: 237
 Content-Type: text/html; charset=iso-8859-1
 
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>301 Moved Permanently</title>
-</head><body>
-<h1>Moved Permanently</h1>
-<p>The document has moved <a href="https://condor.depaul.edu:80/">here</a>.</p>
-</body></html>
-Connection closed by foreign host.
-➜  ~ telnet condor.depaul.edu 80
-Trying 216.220.180.150...
-Connected to condor.depaul.edu.
-Escape character is '^]'.
-GET /
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>301 Moved Permanently</title>
-</head><body>
-<h1>Moved Permanently</h1>
-<p>The document has moved <a href="https:///">here</a>.</p>
-</body></html>
-Connection closed by foreign host.
 ➜  ~ telnet condor.depaul.edu 80
 Trying 216.220.180.150...
 Connected to condor.depaul.edu.
@@ -562,35 +296,6 @@ Content-Type: text/html; charset=iso-8859-1
 <h1>Moved Permanently</h1>
 <p>The document has moved <a href="https://condor.depaul.edu:80/index.html.en">here</a>.</p>
 </body></html>
-
-
-GET /Connection closed by foreign host.
-➜  ~ telnet condor.depaul.edu 80
-Trying 216.220.180.150...
-Connected to condor.depaul.edu.
-Escape character is '^]'.
-GET /elliott/cat.html HTTP/1.1
-Host: condor.depaul.edu:80
-
-HTTP/1.1 301 Moved Permanently
-Date: Sat, 12 Oct 2019 16:11:53 GMT
-Server: Apache
-Location: https://condor.depaul.edu:80/elliott/cat.html
-Content-Length: 253
-Content-Type: text/html; charset=iso-8859-1
-
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>301 Moved Permanently</title>
-</head><body>
-<h1>Moved Permanently</h1>
-<p>The document has moved <a href="https://condor.depaul.edu:80/elliott/cat.html">here</a>.</p>
-</body></html>
-Connection closed by foreign host.
-
-
-
-
 
 
   //even files such as the homework assignment itself were moved to some other directory.

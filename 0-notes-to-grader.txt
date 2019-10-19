@@ -1,0 +1,43 @@
+I have added a comment before the area that I have changed and marked the beginning of the change and the end.
+
+In the original File the error is at line: 282.
+
+The new section begins in the newly sent MyWebServer.java at line 287.
+
+
+Following is the comment I added explainin the change which is also in the new MyWebServer.java
+
+            /** IMPORTANT:
+             * Beyond this point is the area that had an error.
+             * For testing purposes I had hard-coded "html"
+             * in the function sendHeader and then changed it.
+             * This means that where the function "sendHeader(out,type,filesize)"
+             * is I had "sendHeader(out,"html",filesize)".
+             * In the file I handed in the if-statement read:
+             * 
+             * if(type !="html"){
+             *      type = "plain";
+             * }
+             * 
+             *  now to ensure that it always works I added an else statement
+             *  and now check for the html tag differently to make sure the tag
+             *  always is "html" when this is the file-type.
+             */
+
+This is the orginal code that was acting up:
+
+
+            if(type!="html"){
+                type = "plain";
+            }
+
+
+This is the new portion replacing the old:
+
+
+            if(!type.contains("html")){
+                type = "plain";
+            }
+            else{
+                type ="html";
+            }

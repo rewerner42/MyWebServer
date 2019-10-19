@@ -1,0 +1,144 @@
+All of the following requests are created by my code dynamically.
+
+
+[W] Serving Files
+
+TYPE  Name                    Size
+
+[DIR] Parent Directory/
+[TXT] MyTelnetClient.class
+[TXT] index.html
+[TXT] .DS_Store
+[TXT] Test.class
+[TXT] serverlog.txt
+[TXT] dog.txt
+[TXT] MyWebServer.class
+[TXT] MyTelnetClient.java
+[TXT] addnums.html
+[TXT] ListenWorker.class
+[TXT] README.md
+[TXT] Test.java
+[TXT] test.html
+[TXT] cat.html
+[DIR] hello/
+[TXT] BrowseWorker.class
+[DIR] .git/
+[TXT] MyWebServer.java
+[TXT] checklist-mywebserver.html
+[TXT] MyListener.class
+[TXT] MyListener.java
+[TXT] http-streams.txt
+
+
+in html:
+Header sent (checking with telnetclient):
+
+HTTP/1.1 200 OK
+Server: Fox Server
+Content-Length:1231
+Connection: close
+Content-Type: text/html
+
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body><h1>[W] Serving Files</h1><pre>TYPE  <a href="http://localhost:2540/?C=N;O=D">Name</a>                    <a href="http://localhost:2540/?C=S;O=A">Size</a>
+<hr>
+[DIR] <a href="http://localhost:2540/">Parent Directory/</a>
+[TXT] <a href="http://localhost:2540/MyTelnetClient.class">MyTelnetClient.class</a>
+[TXT] <a href="http://localhost:2540/index.html">index.html</a>
+[TXT] <a href="http://localhost:2540/.DS_Store">.DS_Store</a>
+[TXT] <a href="http://localhost:2540/Test.class">Test.class</a>
+[TXT] <a href="http://localhost:2540/serverlog.txt">serverlog.txt</a>
+[TXT] <a href="http://localhost:2540/dog.txt">dog.txt</a>
+[TXT] <a href="http://localhost:2540/MyWebServer.class">MyWebServer.class</a>
+[TXT] <a href="http://localhost:2540/MyTelnetClient.java">MyTelnetClient.java</a>
+[TXT] <a href="http://localhost:2540/addnums.html">addnums.html</a>
+[TXT] <a href="http://localhost:2540/ListenWorker.class">ListenWorker.class</a>
+[TXT] <a href="http://localhost:2540/README.md">README.md</a>
+[TXT] <a href="http://localhost:2540/Test.java">Test.java</a>
+[TXT] <a href="http://localhost:2540/test.html">test.html</a>
+[TXT] <a href="http://localhost:2540/cat.html">cat.html</a>
+[DIR] <a href="http://localhost:2540/hello">hello/</a>
+[TXT] <a href="http://localhost:2540/BrowseWorker.class">BrowseWorker.class</a>
+[DIR] <a href="http://localhost:2540/.git">.git/</a>
+[TXT] <a href="http://localhost:2540/MyWebServer.java">MyWebServer.java</a>
+[TXT] <a href="http://localhost:2540/checklist-mywebserver.html">checklist-mywebserver.html</a>
+[TXT] <a href="http://localhost:2540/MyListener.class">MyListener.class</a>
+[TXT] <a href="http://localhost:2540/MyListener.java">MyListener.java</a>
+[TXT] <a href="http://localhost:2540/http-streams.txt">http-streams.txt</a>
+</pre>
+
+</body></html>
+
+
+requesting cat.html:
+
+HTTP/1.1 200 OK
+Server: Fox Server
+Content-Length:121
+Connection: close
+Content-Type: text/plain
+
+<html> <body>
+<center> 
+
+<h1> This is Elliott's </h1>
+
+<h1>  CAT </h1>
+
+<h1> html file </h1>
+
+</center> 
+</body> </html>
+
+[W] Serving Files
+
+TYPE  Name                    Size
+
+[DIR] Parent Directory/
+[TXT] hello/.DS_Store
+[DIR] hello/test2/
+[DIR] hello/Werner/
+
+in html:
+
+HTTP/1.1 200 OK
+Server: Fox Server
+Content-Length:317
+Connection: close
+Content-Type: text/html
+
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body><h1>[W] Serving Files</h1><pre>TYPE  <a href="http://localhost:2540/hello?C=N;O=D">Name</a>                    <a href="http://localhost:2540/hello?C=S;O=A">Size</a>
+<hr>
+[DIR] <a href="http://localhost:2540/">Parent Directory/</a>
+[TXT] <a href="http://localhost:2540/hello/.DS_Store">hello/.DS_Store</a>
+[DIR] <a href="http://localhost:2540/hello/test2">hello/test2/</a>
+[DIR] <a href="http://localhost:2540/hello/Werner">hello/Werner/</a>
+</pre>
+
+</body></html>
+
+lowest Directory:
+
+[W] Serving Files
+
+TYPE  Name                    Size
+
+[DIR] Parent Directory/
+
+
+in html:
+
+HTTP/1.1 200 OK
+Server: Fox Server
+Content-Length:178
+Connection: close
+Content-Type: text/html
+
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body><h1>[W] Serving Files</h1><pre>TYPE  <a href="http://localhost:2540/hello/Werner?C=N;O=D">Name</a>                    <a href="http://localhost:2540/hello/Werner?C=S;O=A">Size</a>
+<hr>
+[DIR] <a href="http://localhost:2540/hello">Parent Directory/</a>
+</pre>
+
+</body></html>
